@@ -1,0 +1,87 @@
+aside {
+  width: 300px;
+  height: 100%;
+  background: #343131;
+  overflow: auto;
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  left: 0px; }
+  aside .logo {
+    width: 100%;
+    height: 90px;
+    background: #2980b9; }
+    aside .logo div {
+      width: 200px;
+      margin: 0px auto;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 25px;
+      font-size: 18px; }
+  aside .leftlist {
+    margin-top: 15px; }
+    aside .leftlist ul {
+      width: 100%;
+      height: 35px;
+      overflow: hidden; }
+      aside .leftlist ul li, aside .leftlist ul span {
+        display: block;
+        color: #b3b3b3;
+        line-height: 35px;
+        padding-left: 25px;
+        cursor: pointer; }
+        aside .leftlist ul li:hover, aside .leftlist ul li:active, aside .leftlist ul li.active, aside .leftlist ul span:hover, aside .leftlist ul span:active, aside .leftlist ul span.active {
+          background: #929292;
+          font-weight: bold;
+          color: #ffffff; }
+      aside .leftlist ul p {
+        padding-left: 60px;
+        font-size: 15px;
+        color: #808080;
+        line-height: 36px; }
+        aside .leftlist ul p:hover, aside .leftlist ul p:active {
+          color: #2980b9; }
+      aside .leftlist ul.second {
+        position: relative; }
+        aside .leftlist ul.second::before {
+          content: "";
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          background: url("../images/leftic_01.png");
+          top: 13px;
+          left: 10px; }
+        aside .leftlist ul.second .third {
+          position: relative; }
+          aside .leftlist ul.second .third::before {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background: url("../images/leftic_01.png");
+            top: 13px;
+            left: 25px; }
+          aside .leftlist ul.second .third.slide {
+            height: auto; }
+            aside .leftlist ul.second .third.slide::before {
+              background: url("../images/leftic_02.png"); }
+            aside .leftlist ul.second .third.slide li:first-child {
+              background: #2980b9;
+              color: #ffffff;
+              font-weight: bold; }
+      aside .leftlist ul.slide {
+        height: auto;
+        background: #e3e3e3; }
+        aside .leftlist ul.slide::before {
+          background: url("../images/leftic_02.png"); }
+        aside .leftlist ul.slide li {
+          color: #8c8080;
+          padding-left: 40px; }
+          aside .leftlist ul.slide li:hover, aside .leftlist ul.slide li:active {
+            background: #2980b9;
+            color: #ffffff; }
+        aside .leftlist ul.slide span {
+          background: #fcfcfc;
+          color: #404040;
+          font-weight: bold; }
