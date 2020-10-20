@@ -224,47 +224,54 @@ aside {
           color: #2980b9; }
       aside .leftlist ul.second {
         position: relative; }
-        aside .leftlist ul.second::before {
-          content: "";
-          position: absolute;
+        aside .leftlist ul.second .leftic {
           width: 9px;
           height: 9px;
-          background: url("../images/leftic_01.png");
+          position: absolute;
           top: 13px;
-          left: 10px; }
-        aside .leftlist ul.second .third {
-          position: relative; }
-          aside .leftlist ul.second .third::before {
+          left: 10px;
+          overflow: hidden; }
+          aside .leftlist ul.second .leftic::before {
             content: "";
             position: absolute;
-            width: 9px;
-            height: 9px;
-            background: url("../images/leftic_01.png");
-            top: 13px;
+            width: 18px;
+            height: 18px;
+            top: 0px;
+            left: 0px;
+            background: url("../images/leftic.png"); }
+        aside .leftlist ul.second.slide {
+          height: auto;
+          background: #e3e3e3; }
+          aside .leftlist ul.second.slide li {
+            color: #8c8080;
+            padding-left: 40px; }
+            aside .leftlist ul.second.slide li:hover, aside .leftlist ul.second.slide li:active {
+              background: #2980b9;
+              color: #ffffff; }
+          aside .leftlist ul.second.slide a {
+            background: #fcfcfc;
+            color: #404040;
+            font-weight: bold; }
+          aside .leftlist ul.second.slide .leftic::before {
+            top: -9px; }
+        aside .leftlist ul.second .third {
+          position: relative; }
+          aside .leftlist ul.second .third .leftic {
             left: 25px; }
+            aside .leftlist ul.second .third .leftic::before {
+              top: 0px; }
+            aside .leftlist ul.second .third .leftic.white::before {
+              top: 0px;
+              left: -9px; }
           aside .leftlist ul.second .third.slide {
             height: auto; }
-            aside .leftlist ul.second .third.slide::before {
-              background: url("../images/leftic_02.png"); }
             aside .leftlist ul.second .third.slide li:first-child {
               background: #2980b9;
               color: #ffffff;
               font-weight: bold; }
-      aside .leftlist ul.slide {
-        height: auto;
-        background: #e3e3e3; }
-        aside .leftlist ul.slide::before {
-          background: url("../images/leftic_02.png"); }
-        aside .leftlist ul.slide li {
-          color: #8c8080;
-          padding-left: 40px; }
-          aside .leftlist ul.slide li:hover, aside .leftlist ul.slide li:active {
-            background: #2980b9;
-            color: #ffffff; }
-        aside .leftlist ul.slide a {
-          background: #fcfcfc;
-          color: #404040;
-          font-weight: bold; }
+            aside .leftlist ul.second .third.slide .leftic::before {
+              top: -9px;
+              left: -9px; }
 
 main {
   display: block;
@@ -313,7 +320,10 @@ main {
         list-style-type: decimal;
         font-size: 18px;
         line-height: 24px;
-        font-weight: lighter; }
+        font-weight: lighter;
+        padding-bottom: 15px; }
+        main article .title ul li:last-child {
+          padding: 0px; }
     main article .request h4 {
       padding: 30px 0px 25px; }
     main article .request .codebox {

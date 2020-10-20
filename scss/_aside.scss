@@ -53,33 +53,66 @@ aside {
             //第二層樣式
             &.second {
                 position: relative;
-                &::before {
-                    content: "";
-                    position: absolute;
+                //+-小圖
+                .leftic {
                     width: 9px;
                     height: 9px;
-                    background: url('../images/leftic_01.png');
+                    position: absolute;
                     top: 13px;
                     left: 10px;
+                    overflow: hidden;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                        top: 0px;
+                        left: 0px;
+                        background: url('../images/leftic.png');
+                    }
+                }
+                 //第二層滑動樣式
+                 &.slide {
+                    height: auto;
+                    background: #e3e3e3;
+                    li {
+                        color: #8c8080;
+                        padding-left: 40px;
+                        &:hover,&:active {
+                            background: #2980b9;
+                            color: #ffffff;
+                        }
+                    }
+                    a {
+                        background: #fcfcfc;
+                        color: #404040;
+                        font-weight: bold;
+                    }
+                    .leftic {
+                        &::before {
+                            top: -9px;
+                        }
+                    }
                 }
                 //第三層樣式
                 .third {
                     position: relative;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 9px;
-                        height: 9px;
-                        background: url('../images/leftic_01.png');
-                        top: 13px;
+                    //+-小圖
+                    .leftic {
                         left: 25px;
+                        &::before {
+                            top: 0px;
+                        }
+                        &.white {
+                            &::before {
+                                top: 0px;
+                                left: -9px;
+                            }
+                        }
                     }
                     //第三層滑動樣式
                     &.slide {
                         height: auto;
-                        &::before {
-                            background: url('../images/leftic_02.png');
-                        }
                         li {
                             &:first-child {
                                 background: #2980b9;
@@ -87,28 +120,13 @@ aside {
                                 font-weight: bold;
                             }
                         }
+                        .leftic {
+                            &::before {
+                                top: -9px;
+                                left: -9px;
+                            }
+                        }
                     }
-                }
-            }
-            //第二層滑動樣式
-            &.slide {
-                height: auto;
-                background: #e3e3e3;
-                &::before {
-                    background: url('../images/leftic_02.png');
-                }
-                li {
-                    color: #8c8080;
-                    padding-left: 40px;
-                    &:hover,&:active {
-                        background: #2980b9;
-                        color: #ffffff;
-                    }
-                }
-                a {
-                    background: #fcfcfc;
-                    color: #404040;
-                    font-weight: bold;
                 }
             }
         }
