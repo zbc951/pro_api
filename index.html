@@ -9,12 +9,15 @@
     <script src="js/javascript.js"></script>
 </head>
 <body ontouchstart="">
+    <!--邊選單-->
     <aside>
+        <!--LOGO-->
         <section class="logo">
             <div>
                 <p>Booongo Integration Documentation</p>
             </div>
         </section>
+        <!--邊選單-->
         <section class="leftlist">
             <ul>
                 <li>Game Runner</li>
@@ -57,7 +60,9 @@
             </ul>
         </section>
     </aside>
+    <!--主內容-->
     <main>
+        <!--RWD-->
         <div class="rwdtop">
             <div>
                 <button><span></span></button>
@@ -65,11 +70,13 @@
             </div>
         </div>
         <article>
+            <!--開頭-->
             <section class="top">
                 <a href="#">Docs</a>
                 <span>單錢包API</span>
                 <a href="#" class="more">View page source</a>
             </section>
+            <!--開頭字-->
             <section class="title">
                 <h1>單錢包API</h1>
                 <h2>API的指令</h2>
@@ -82,8 +89,10 @@
                     <li><span class="b">logout</span>指令是當玩家一退出遊戲後傳送(例如:關閉瀏覽器標籤頁，離開到大廳，連接錯誤，嚴重錯誤或其他原因)。預設情況下，發送此指令處於關閉狀態，但如果您需要從平台接受此類請求，則可以詢問BNG客戶服務。</li>
                 </ul>
             </section>
+            <!--請求格式-->
             <section class="request">
                 <h4>請求格式:</h4>
+                <!--code-->
                 <div class="codebox">
                     <p><span class="pr">"name"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
                     <p><span class="pr">"uid"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
@@ -99,6 +108,7 @@
                         <p>//&emsp;string<span class="b">,</span>&emsp;[0-9a-zA-Z]{32}<span class="b">,</span>&emsp;遊戲session的ID</p>
                     </div>
                 </div>
+                <!--參數值-->
                 <table>
                     <tr>
                         <th>參數</th>
@@ -136,19 +146,25 @@
                         <td>每個API指令有不同的參數集。</td>
                     </tr>
                 </table>
+                <!--注意-->
                 <div class="a">
                     <p>注意事項，所有成功的響應或此文件中任何錯誤代碼之一的響應，都應該與HTTP代碼200一起傳送。</p>
                     <p>如果營運商由於暫時性的異常導致無法成功處理來自BNG平台的請求，則必須返回HTTP 503的錯誤代碼。在這種情況下平台將會嘗試再次傳送這個請求，且在營運商服務器回傳HTTP代碼503時將會持續傳送該請求，直到回傳200(成功響應)或是HTTP代碼500(嚴重錯誤)回傳至服務器為止。</p>
                     <p>如果出現需要手動處理的嚴重錯誤時，則需要回傳HTTP代碼500。當平台接收到這個HTTP代碼達到<span class="r">{MAX_COMMAND_RETRY}</span>次數時將會封鎖玩家的遊戲直到此問題由營運方手動解決。注意事項，當營運方回傳HTTP代碼500錯誤時，營運方可在body這個區域輸入任何想加入關於這個問題的描述，但要注意，在log終將只會儲存這類型的回應內容中的1000個字元。</p>
                 </div>
+                <!--危險-->
                 <div class="d">
                     <p>如我您的服務器收到一個已經處理過的<span class="r">uid</span>，您<span class="b">必須</span>返回與上一次一樣的結果，而不是在重新整理一次這個<span class="r">uid</span>。</p>
                     <p>否則，將造成許多的鎖定交易，這將會使玩家無法進行遊戲，因此必須手動操作來解鎖此類交易。</p>
                 </div>
+                <!--註解-->
                 <div class="c">
                     <p>請注意，BNG傳遞的所有<span class="r">*id</span>參數具有唯一性，限制範圍僅限於您的<span>{PROJECT_NAME}</span>當中。</p>
                 </div>
-                <div class="i"></div>
+                <!--重要-->
+                <div class="i">
+                    <p>營運商方面單錢包API的實施必須要有能力接收尚未出現在API中的額外JSON字段，以避免由於更新API時導致的關鍵情況。</p>
+                </div>
             </section>
         </article>
     </main>
