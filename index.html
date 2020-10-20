@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>單錢包API</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/javascript.js"></script>
+</head>
+<body>
+    <aside>
+        <section class="logo">
+            <div>
+                <p>Booongo Integration Documentation</p>
+            </div>
+        </section>
+        <section class="leftlist">
+            <ul>
+                <li>Game Runner</li>
+            </ul>
+            <ul>
+                <li>遊戲大廳</li>
+            </ul>
+            <ul>
+                <li>多錢包API</li>
+            </ul>
+            <ul class="list_ul4 slide">
+                <li class="list_ul4_li1">單錢包API</li>
+                <div class="coding">
+                    <ul>
+                        <li class="coding_li1">API的指令</li>
+                    </ul>
+                </div>
+                <div class="demo">
+                    <ul class="slide">
+                        <li class="demo_li1">遊戲流程範例</li>
+                        <p>1.生成遊戲啟動URL</p>
+                        <p>2.遊戲服務器發送登錄請求</p>
+                        <p>3.營運商發送登錄請求的回應</p>
+                        <p>4.遊戲服務器發送交易請求</p>
+                        <p>5.營運商發送交易請求的回應</p>
+                        <p>6.遊戲服務器發送登出請求</p>
+                        <p>7.營運商發送登出請求的回應</p>
+                    </ul>
+                </div>
+                <li class="list_ul4_li2">延伸實例1:Bradns(站點)</li>
+                <li class="list_ul4_li3">延伸實例2:安全標頭</li>
+            </ul>
+            <ul>
+                <li>Operator API</li>
+            </ul>
+            <ul>
+                <li>Hands History</li>
+            </ul>
+            <ul>
+                <li>貨幣兌換匯率接口</li>
+            </ul>
+        </section>
+    </aside>
+    <main>
+        <div class="rwdtop">
+            <div>
+                <button><span></span></button>
+                <p>Booongo Integration Documentation</p>
+            </div>
+        </div>
+        <article>
+            <section class="top">
+                <a href="#">Docs</a>
+                <span>單錢包API</span>
+                <a href="#" class="more">View page source</a>
+            </section>
+            <section class="title">
+                <h1>單錢包API</h1>
+                <h2>API的指令</h2>
+                <h3>指令簡介</h3>
+                <ul>
+                    <li><span class="b">login</span>指令會在每次玩家進入遊戲介面時傳送。服務器會傳送啟動遊戲的秘密金鑰。當營運商驗證金鑰後，遊戲才會對玩家顯示，否則玩家會收到錯誤信息(詳細錯誤信息可在下方查閱)。</li>
+                    <li><span class="b">transaction</span>指令會在每次玩家執行遊戲動作時傳送。服務器會傳送玩家的賭注(bet)與獎金(win)。當營運商確定當次交易後，玩家會看到新的結果(餘額的變化)，否則玩家會收到錯誤信息(錯誤信息可在下方查閱)。</li>
+                    <li><span class="b">getbalance</span>指令當玩家在遊戲裡面並且不執行任何遊戲動作時，將會被定時的傳送。這個指令主要目的是要得到玩家的實際餘額。指令傳送的頻繁次數是參照<span class="r">{BLANCE_EXPIRE}</span>這個設定(可由BNG客戶服務設定)。</li>
+                    <li><span class="b">rollback</span>指令是當<span class="b">transaction</span>指令未獲得回應時，將會傳送。主要目的是發生連接中斷時為了使遊戲服務器與營運商同步。</li>
+                    <li><span class="b">logout</span>指令是當玩家一退出遊戲後傳送(例如:關閉瀏覽器標籤頁，離開到大廳，連接錯誤，嚴重錯誤或其他原因)。預設情況下，發送此指令處於關閉狀態，但如果您需要從平台接受此類請求，則可以詢問BNG客戶服務。</li>
+                </ul>
+            </section>
+            <section class="request">
+                <h4>請求格式:</h4>
+                <div class="codebox">
+                    <p><span class="pr">"name"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <p><span class="pr">"uid"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <p><span class="pr">"c_at"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <p><span class="pr">"sent_at"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <p><span class="pr">"session"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <p><span class="pr">"args"</span><span class="b">:</span><span class="pr">&nbsp;&nbsp;""</span><span class="b">,</span></p>
+                    <div class="innerbox">
+                        <p>//&emsp;string<span class="b">,</span>&emsp;其中之一<span class="b">:</span>&emsp;"login"<span class="b">,</span>&emsp;"transaction"<span class="b">,</span>&emsp;"getbalance"<span class="b">,</span>&emsp;"rollback"<span class="b">,</span>&emsp;"logout"</p>
+                        <p>//&emsp;string<span class="b">,</span>&emsp;[0-9a-zA-Z]{32}<span class="b">,</span>&emsp;唯一請求ID</p>
+                        <p>//&emsp;string<span class="b">,</span>&emsp;ISO-8601&emsp;datetime&emsp;("YYYY-MM-DDThh<span class="b">:</span>mm<span class="b">:</span>ss±hh<span class="b">:</span>mm")<span class="b">,</span>&emsp;指令生成時間</p>
+                        <p>//&emsp;string<span class="b">,</span>&emsp;ISO-8601&emsp;datetime&emsp;("YYYY-MM-DDThh<span class="b">:</span>mm<span class="b">:</span>ss±hh<span class="b">:</span>mm")<span class="b">,</span>&emsp;指令發送時間</p>
+                        <p>//&emsp;string<span class="b">,</span>&emsp;[0-9a-zA-Z]{32}<span class="b">,</span>&emsp;遊戲session的ID</p>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>參數</th>
+                        <th>值</th>
+                        <th>說明</th>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>string<span class="b">,</span>[a-z]+</td>
+                        <td>指令的名稱，其中之一<span class="b">:</span>"login"<span class="b">,</span>"transaction"<span class="b">,</span>"getbalance"<span class="b">,</span>"rollback"<span class="b">,</span>"logout"。</td>
+                    </tr>
+                    <tr>
+                        <td>uid</td>
+                        <td>string<span class="b">,</span>[0-9a-zA-Z]+<span class="b">,</span>35字</td>
+                        <td>唯一請求ID。API指令必須是冪等的，具有相同uid的重複請求不應被營運商兩次處理。</td>
+                    </tr>
+                    <tr>
+                        <td>c_at</td>
+                        <td>string<span class="b">,</span>ISO-8601 datetime</td>
+                        <td>指令生成的時間戳。在BNG平台生成該指令的創建時間。注意事項，如果由於連結丟失或是網路逾時的狀況在相同的<span class="r">uid</span>下重複發送指令<span class="r">c_at</span>參數將 <span class="b">維持不變</span>。</td>
+                    </tr>
+                    <tr>
+                        <td>sent_at</td>
+                        <td>string<span class="b">,</span>ISO-8601 datetime</td>
+                        <td>發送指令的時間戳。在BNG平台發送該指令時當前的時間戳。注意事項，如果由於連結丟失或是網路逾時的狀況在相同的<span class="r">uid</span>下重複發送指令<span class="r">send_at</span>參數將 <span class="b">會使用新的</span>時間戳。</td>
+                    </tr>
+                    <tr>
+                        <td>session</td>
+                        <td>string<span class="b">,</span>[0-9a-zA-Z]+<span class="b">,</span>32字</td>
+                        <td>由遊戲服務器生成的遊戲session ID。</td>
+                    </tr>
+                    <tr>
+                        <td>args</td>
+                        <td></td>
+                        <td>每個API指令有不同的參數集。</td>
+                    </tr>
+                </table>
+                <div class="a">
+                    <p>注意事項，所有成功的響應或此文件中任何錯誤代碼之一的響應，都應該與HTTP代碼200一起傳送。</p>
+                    <p>如果營運商由於暫時性的異常導致無法成功處理來自BNG平台的請求，則必須返回HTTP 503的錯誤代碼。在這種情況下平台將會嘗試再次傳送這個請求，且在營運商服務器回傳HTTP代碼503時將會持續傳送該請求，直到回傳200(成功響應)或是HTTP代碼500(嚴重錯誤)回傳至服務器為止。</p>
+                    <p>如果出現需要手動處理的嚴重錯誤時，則需要回傳HTTP代碼500。當平台接收到這個HTTP代碼達到<span class="r">{MAX_COMMAND_RETRY}</span>次數時將會封鎖玩家的遊戲直到此問題由營運方手動解決。注意事項，當營運方回傳HTTP代碼500錯誤時，營運方可在body這個區域輸入任何想加入關於這個問題的描述，但要注意，在log終將只會儲存這類型的回應內容中的1000個字元。</p>
+                </div>
+                <div class="d">
+                    <p>如我您的服務器收到一個已經處理過的<span class="r">uid</span>，您<span class="b">必須</span>返回與上一次一樣的結果，而不是在重新整理一次這個<span class="r">uid</span>。</p>
+                    <p>否則，將造成許多的鎖定交易，這將會使玩家無法進行遊戲，因此必須手動操作來解鎖此類交易。</p>
+                </div>
+                <div class="c">
+                    <p>請注意，BNG傳遞的所有<span class="r">*id</span>參數具有唯一性，限制範圍僅限於您的<span>{PROJECT_NAME}</span>當中。</p>
+                </div>
+                <div class="i"></div>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

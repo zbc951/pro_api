@@ -1,0 +1,118 @@
+main {
+    display: block;
+    width: calc(100%-300px);
+    height: auto;
+    margin-left: 300px;
+    background: #fcfcfc;
+    //rwd上層
+    .rwdtop {
+        display: none;
+    }
+    article {
+        max-width: 1500px;
+        padding: 0px 60px;
+        height: auto;
+        margin: 0px auto;
+        //上層
+        .top {
+            width: 100%;
+            height: 80px;
+            border-bottom: solid 1px #e1e4e5;
+            a {
+                color: #6680b9;
+                line-height: 80px;
+                font-size: 17px;
+            }
+            .more {
+                float: right;
+            }
+            span {
+                position: relative;
+                padding-left: 20px;
+                font-size: 17px;
+                &::before {
+                    content: ">>";
+                    position: absolute;
+                    font-size: 10px;
+                    top: 7px;
+                    left: 0px;
+                }
+            }
+        }
+        //標題字+前五點
+        .title {
+            h1 {
+                font-size: 32px;
+                padding: 30px 0px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 23px;
+                padding: 30px 0px 25px;
+            }
+            ul {
+                margin-left: 19px;
+                li {
+                    list-style-type: decimal;
+                    font-size: 18px;
+                    line-height: 24px;
+                    font-weight: lighter;
+                }
+            }
+        }
+        //請求格式
+        .request {
+            h4 {
+                padding: 30px 0px 25px;
+            }
+            .codebox {
+                margin-bottom: 25px;
+            }
+            table {
+                text-align: left;
+                border: solid 1px #e1e4e5;
+                margin-bottom: 25px;
+                th {
+                    font-weight: bold;
+                    padding-left: 20px;
+                    height: 40px;
+                    line-height: 40px;
+                    border: solid 1px #e1e4e5;
+                    border-bottom-width: 2px;
+                }
+                tr {
+                    &:nth-child(even) {
+                        background: #f3f6f6;
+                    }
+                }
+                td {
+                    padding: 5px 20px;
+                    height: 30px;
+                    line-height: 24px;
+                    border: solid 1px #e1e4e5;
+                    vertical-align: middle;
+                    &:nth-child(1) {
+                        width: 7%;
+                    }
+                    &:nth-child(2) {
+                        width: 23%;
+                    }
+                    &:nth-child(3) {
+                        word-break: break-all;
+                    }
+                }
+            }
+            .a {
+                margin-bottom: 25px;
+            }
+            .d {
+                margin-bottom: 25px;
+            }
+            .c {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

@@ -1,0 +1,441 @@
+@charset "UTF-8";
+html {
+  overflow-x: hidden; }
+  html body {
+    overflow-x: hidden; }
+  html .b {
+    font-weight: bold; }
+  html .r {
+    color: #e74c3c;
+    border: solid 1px #e1e4e5;
+    font-size: 12px;
+    background: white;
+    padding: 2px 5px 1px; }
+  html .pr {
+    color: #e74c3c; }
+  html .codebox {
+    height: auto;
+    background: white;
+    padding: 30px 35px;
+    border: solid 1px #e1e4e5;
+    position: relative;
+    overflow: auto; }
+    html .codebox::before {
+      content: "{";
+      font-size: 10px;
+      position: absolute;
+      top: 15px;
+      left: 15px; }
+    html .codebox::after {
+      content: "}";
+      font-size: 10px;
+      position: absolute;
+      bottom: 15px;
+      left: 15px; }
+    html .codebox p {
+      font-size: 13px;
+      line-height: 20px; }
+    html .codebox .innerbox {
+      position: absolute;
+      width: 700px;
+      top: 33px;
+      left: 200px; }
+      html .codebox .innerbox p {
+        color: #999988; }
+  html .a, html .a2, html .d, html .c, html .i, html .i2 {
+    width: calc(100%-30px);
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 55px 15px 15px; }
+    html .a::before, html .a2::before, html .d::before, html .c::before, html .i::before, html .i2::before {
+      content: "";
+      position: absolute;
+      color: white;
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+      top: 0px;
+      left: 0px;
+      padding-left: 35px;
+      font-size: 18px;
+      font-weight: bold; }
+    html .a::after, html .a2::after, html .d::after, html .c::after, html .i::after, html .i2::after {
+      content: "!";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 8px;
+      text-align: center;
+      top: 9px;
+      left: 15px; }
+    html .a p, html .a2 p, html .d p, html .c p, html .i p, html .i2 p {
+      padding-bottom: 30px;
+      font-size: 18px;
+      line-height: 24px; }
+      html .a p:last-child, html .a2 p:last-child, html .d p:last-child, html .c p:last-child, html .i p:last-child, html .i2 p:last-child {
+        padding: 0px; }
+  html .a {
+    background: #ffedcc; }
+    html .a::before {
+      content: "注意";
+      background: #f0b37e; }
+    html .a::after {
+      color: #f0b37e; }
+  html .a2 {
+    background: #ffedcc; }
+    html .a2::before {
+      content: "警告";
+      background: #f0b37e; }
+    html .a2::after {
+      color: #f0b37e; }
+  html .d {
+    background: #fdf3f2; }
+    html .d::before {
+      content: "危險";
+      background: #f29f97; }
+    html .d::after {
+      color: #f29f97; }
+  html .c {
+    background: #e7f2fa; }
+    html .c::before {
+      content: "註解";
+      background: #6ab0de; }
+    html .c::after {
+      color: #6ab0de; }
+  html .i {
+    background: #dbfaf4; }
+    html .i::before {
+      content: "重要";
+      background: #1abc9c; }
+    html .i::after {
+      color: #1abc9c; }
+  html .i2 {
+    background: #dbfaf4; }
+    html .i2::before {
+      content: "小技巧";
+      background: #1abc9c; }
+    html .i2::after {
+      color: #1abc9c; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  font-family: "微軟正黑體";
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+input {
+  outline: none; }
+
+html {
+  font-family: "微軟正黑體";
+  background: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto; }
+
+a:link {
+  text-decoration: none; }
+
+aside {
+  width: 300px;
+  height: 100%;
+  background: #343131;
+  overflow: hidden;
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  left: 0px; }
+  aside .logo {
+    width: 100%;
+    height: 90px;
+    background: #2980b9; }
+    aside .logo div {
+      width: 200px;
+      margin: 0px auto;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 25px;
+      font-size: 18px; }
+  aside .leftlist {
+    margin-top: 15px; }
+    aside .leftlist ul {
+      width: 100%;
+      height: 35px;
+      overflow: hidden; }
+      aside .leftlist ul li {
+        color: #b3b3b3;
+        line-height: 35px;
+        padding-left: 25px;
+        cursor: pointer; }
+        aside .leftlist ul li:hover {
+          background: rgba(255, 255, 255, 0.3);
+          font-weight: bold; }
+    aside .leftlist .list_ul4 li {
+      position: relative; }
+      aside .leftlist .list_ul4 li::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        position: absolute;
+        top: 14px;
+        left: 13px; }
+    aside .leftlist .list_ul4 .list_ul4_li1::before {
+      background: url("../images/leftic_01.png"); }
+    aside .leftlist .list_ul4 .list_ul4_li2, aside .leftlist .list_ul4 .list_ul4_li3 {
+      padding-left: 40px;
+      color: #808080; }
+    aside .leftlist .list_ul4 .coding ul .coding_li1 {
+      padding-left: 40px;
+      color: #80808c; }
+      aside .leftlist .list_ul4 .coding ul .coding_li1::before {
+        background: url("../images/leftic_01.png");
+        left: 25px; }
+    aside .leftlist .list_ul4 .coding .slide {
+      height: 200px; }
+    aside .leftlist .list_ul4 .coding .slide .coding_li1 {
+      font-weight: bold;
+      color: #404040; }
+      aside .leftlist .list_ul4 .coding .slide .coding_li1::before {
+        background: url("../images/leftic_02.png"); }
+    aside .leftlist .list_ul4 .demo ul .demo_li1 {
+      padding-left: 40px;
+      color: #80808c; }
+      aside .leftlist .list_ul4 .demo ul .demo_li1::before {
+        background: url("../images/leftic_01.png");
+        left: 25px; }
+    aside .leftlist .list_ul4 .demo ul p {
+      font-size: 15px;
+      line-height: 35px;
+      color: #80808c;
+      padding-left: 60px; }
+    aside .leftlist .list_ul4 .demo .slide {
+      height: auto; }
+    aside .leftlist .list_ul4 .demo .slide .demo_li1 {
+      font-weight: bold;
+      color: #404040; }
+      aside .leftlist .list_ul4 .demo .slide .demo_li1::before {
+        background: url("../images/leftic_02.png"); }
+    aside .leftlist .slide {
+      height: auto;
+      background: #e3e3e3; }
+    aside .leftlist .slide .list_ul4_li1 {
+      font-weight: bold;
+      color: #404040;
+      background: #fcfcfc; }
+      aside .leftlist .slide .list_ul4_li1::before {
+        background: url("../images/leftic_02.png"); }
+
+main {
+  display: block;
+  width: calc(100%-300px);
+  height: auto;
+  margin-left: 300px;
+  background: #fcfcfc; }
+  main .rwdtop {
+    display: none; }
+  main article {
+    max-width: 1500px;
+    padding: 0px 60px;
+    height: auto;
+    margin: 0px auto; }
+    main article .top {
+      width: 100%;
+      height: 80px;
+      border-bottom: solid 1px #e1e4e5; }
+      main article .top a {
+        color: #6680b9;
+        line-height: 80px;
+        font-size: 17px; }
+      main article .top .more {
+        float: right; }
+      main article .top span {
+        position: relative;
+        padding-left: 20px;
+        font-size: 17px; }
+        main article .top span::before {
+          content: ">>";
+          position: absolute;
+          font-size: 10px;
+          top: 7px;
+          left: 0px; }
+    main article .title h1 {
+      font-size: 32px;
+      padding: 30px 0px; }
+    main article .title h2 {
+      font-size: 28px; }
+    main article .title h3 {
+      font-size: 23px;
+      padding: 30px 0px 25px; }
+    main article .title ul {
+      margin-left: 19px; }
+      main article .title ul li {
+        list-style-type: decimal;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: lighter; }
+    main article .request h4 {
+      padding: 30px 0px 25px; }
+    main article .request .codebox {
+      margin-bottom: 25px; }
+    main article .request table {
+      text-align: left;
+      border: solid 1px #e1e4e5;
+      margin-bottom: 25px; }
+      main article .request table th {
+        font-weight: bold;
+        padding-left: 20px;
+        height: 40px;
+        line-height: 40px;
+        border: solid 1px #e1e4e5;
+        border-bottom-width: 2px; }
+      main article .request table tr:nth-child(even) {
+        background: #f3f6f6; }
+      main article .request table td {
+        padding: 5px 20px;
+        height: 30px;
+        line-height: 24px;
+        border: solid 1px #e1e4e5;
+        vertical-align: middle; }
+        main article .request table td:nth-child(1) {
+          width: 7%; }
+        main article .request table td:nth-child(2) {
+          width: 23%; }
+        main article .request table td:nth-child(3) {
+          word-break: break-all; }
+    main article .request .a {
+      margin-bottom: 25px; }
+    main article .request .d {
+      margin-bottom: 25px; }
+    main article .request .c {
+      margin-bottom: 25px; }
+
+@media only screen and (max-width: 769px) {
+  aside {
+    width: 70%;
+    -webkit-transform: translateX(-101%);
+    -ms-transform: translateX(-101%);
+    transform: translateX(-101%);
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all; }
+  .slide {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
+    .slide .logo div {
+      padding-top: 35px;
+      width: 400px; }
+  main {
+    width: 100%;
+    margin: 0px;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    transition: 0.5s all; }
+    main .rwdtop {
+      display: block;
+      width: 100%;
+      height: 70px;
+      background: #2980b9;
+      text-align: center;
+      position: fixed;
+      z-index: 100; }
+      main .rwdtop div {
+        width: 100%;
+        height: 70px;
+        text-align: center; }
+        main .rwdtop div button {
+          width: 36px;
+          height: 36px;
+          background: transparent;
+          position: relative;
+          float: left;
+          margin: 17px 0px 0px 20px; }
+          main .rwdtop div button::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: white;
+            border-radius: 5px;
+            top: 0px;
+            left: 0px; }
+          main .rwdtop div button::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: white;
+            border-radius: 5px;
+            bottom: 0px;
+            left: 0px; }
+          main .rwdtop div button span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: white;
+            border-radius: 5px;
+            top: 15px;
+            left: 0px; }
+        main .rwdtop div p {
+          display: block;
+          color: white;
+          font-size: 18px;
+          line-height: 70px;
+          font-weight: bold;
+          margin: 0px auto; }
+    main article {
+      padding: 70px 30px 0px; }
+  .slide_r {
+    -webkit-transform: translateX(70%);
+    -ms-transform: translateX(70%);
+    transform: translateX(70%); } }
+
+@media only screen and (max-width: 450px) {
+  .slide .logo div {
+    width: 300px;
+    padding-top: 25px; }
+  main .rwdtop div p {
+    line-height: 35px;
+    width: 300px; } }

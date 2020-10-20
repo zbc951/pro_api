@@ -1,0 +1,107 @@
+@media only screen and (max-width:769px) {
+    aside {
+        width: 70%;
+        transform: translateX(-101%);
+        transition: 0.5s all;
+    }
+    .slide{
+        transform: translateX(0%);
+        .logo {
+            div {
+                padding-top: 35px;
+                width: 400px;
+            }
+        }
+    }
+    main {
+        width: 100%;
+        margin:0px;
+        transition: 0.5s all;
+        .rwdtop {
+            display: block;
+            width: 100%;
+            height: 70px;
+            background: #2980b9;
+            text-align: center;
+            position: fixed;
+            z-index: 100;
+            div {
+                width: 100%;
+                height: 70px;
+                text-align: center;
+                button {
+                    width: 36px;
+                    height: 36px;
+                    background: transparent;
+                    position: relative;
+                    float: left;
+                    margin: 17px 0px 0px 20px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 6px;
+                        background: white;
+                        border-radius: 5px;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 6px;
+                        background: white;
+                        border-radius: 5px;
+                        bottom: 0px;
+                        left: 0px;
+                    }
+                    span {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 6px;
+                        background: white;
+                        border-radius: 5px;
+                        top: 15px;
+                        left: 0px;
+                    }
+                }
+                p {
+                    display: block;
+                    color: white;
+                    font-size: 18px;
+                    line-height: 70px;
+                    font-weight: bold;
+                    margin: 0px auto;
+                }
+            }
+        }
+        article {
+            padding: 70px 30px 0px;
+        }
+    }
+    .slide_r {
+        transform: translateX(70%);
+    }
+}
+@media only screen and (max-width:450px) {
+    .slide {
+        .logo {
+            div {
+                width: 300px;
+                padding-top: 25px;
+            }
+        }
+    }
+    main {
+        .rwdtop {
+            div {
+                p {
+                    line-height: 35px;
+                    width: 300px;
+                }
+            }
+        }
+    }
+}

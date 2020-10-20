@@ -1,0 +1,169 @@
+html {
+    overflow-x: hidden;
+   body {
+       overflow-x: hidden;
+   }
+//共用格式
+    //粗體
+    .b {
+        font-weight: bold;
+    }
+        //白底框紅字
+    .r {
+        color: #e74c3c;
+        border: solid 1px #e1e4e5;
+        font-size: 12px;
+        background: white;
+        padding: 2px 5px 1px;
+    }
+        //紅字
+    .pr {
+        color: #e74c3c;
+    }
+        //code放置區
+    .codebox {
+        height: auto;
+        background: white;
+        padding: 30px 35px;
+        border: solid 1px #e1e4e5;
+        position: relative;
+        overflow: auto;
+        &::before {
+            content: "{";
+                font-size: 10px;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+        }
+        &::after {
+            content: "}";
+            font-size: 10px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+        }
+        p {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .innerbox {
+            position: absolute;
+            width: 700px;
+            top: 33px;
+            left: 200px;
+            p {
+                color: #999988;
+            }
+        }
+    }
+    .a,.a2,.d,.c,.i,.i2 {
+        width: calc(100%-30px);
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 55px 15px 15px;
+        &::before {
+            content: "";
+            position: absolute;
+            color: white;
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            top: 0px;
+            left: 0px;
+            padding-left: 35px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        &::after {
+            content: "!";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+            top: 9px;
+            left: 15px;
+        }
+        p {
+            padding-bottom: 30px;
+            font-size: 18px;
+            line-height: 24px;
+            &:last-child {
+                padding: 0px;
+            }
+        }
+    }
+        //注意
+    .a {
+        background: #ffedcc;
+        &::before {
+            content: "注意";
+            background: #f0b37e;
+            
+        }
+        &::after {
+            color: #f0b37e;
+        }
+    }
+        //警告
+    .a2 {
+        background: #ffedcc;
+        &::before {
+            content: "警告";
+            background: #f0b37e;
+        }
+        &::after {
+            color: #f0b37e;
+        }
+    }  
+        //危險
+    .d {
+        background: #fdf3f2;
+        &::before {
+            content: "危險";
+            background: #f29f97;
+        }
+        &::after {
+            color: #f29f97;
+        }
+    }
+        //註解
+    .c {
+        background: #e7f2fa;
+        &::before {
+            content: "註解";
+            background: #6ab0de;
+        }
+        &::after {
+            color: #6ab0de;
+        }
+    }
+        //重要
+    .i {
+        background: #dbfaf4;
+        &::before {
+            content: "重要";
+            background: #1abc9c;
+        }
+        &::after {
+            color: #1abc9c;
+        }
+    }
+        //小技巧
+    .i2 {
+        background: #dbfaf4;
+        &::before {
+            content: "小技巧";
+            background: #1abc9c;
+        }
+        &::after {
+            color: #1abc9c;
+        }
+    }
+}
+@import "_reset";
+@import "_aside";
+@import "_main";
+@import "_rwd769";

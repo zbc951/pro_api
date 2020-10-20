@@ -1,0 +1,135 @@
+aside {
+    width: 300px;
+    height: 100%;
+    background: #343131;
+    overflow: hidden;
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    //LOGO
+    .logo {
+        width: 100%;
+        height: 90px;
+        background: #2980b9;
+        div {
+            width: 200px;
+            margin: 0px auto;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 25px;
+            font-size: 18px;
+        }
+    }
+    //選單樣式
+    .leftlist {
+        margin-top: 15px;
+        ul {
+            width: 100%;
+            height: 35px;
+            overflow: hidden;
+            li {
+                color: #b3b3b3;
+                line-height: 35px;
+                padding-left: 25px;
+                cursor: pointer;
+                &:hover {
+                    background: rgba(255,255,255,.3);
+                    font-weight: bold;
+                }
+            }
+        }
+        //單錢包API
+        .list_ul4 {
+            li {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 9px;
+                    height: 9px;
+                    position: absolute;
+                    top: 14px;
+                    left: 13px;
+                }
+            }
+            //標頭
+            .list_ul4_li1 {
+                &::before {
+                    background: url('../images/leftic_01.png');
+                }
+            }
+            //延伸實例
+            .list_ul4_li2,.list_ul4_li3 {
+                padding-left: 40px;
+                color: #808080;
+            }
+            //API的指令
+            .coding {
+                ul {
+                    .coding_li1 {
+                        padding-left: 40px;
+                        color: #80808c;
+                        &::before {
+                            background: url('../images/leftic_01.png');
+                            left: 25px;
+                        }
+                    }
+                }
+                .slide {
+                    height: 200px;
+                }
+                .slide .coding_li1 {
+                    font-weight: bold;
+                    color: #404040;
+                    &::before {
+                        background: url('../images/leftic_02.png');
+                    }
+                }
+            }
+            //遊戲流程範例
+            .demo {
+                ul {
+                    .demo_li1 {
+                        padding-left: 40px;
+                        color: #80808c;
+                        &::before {
+                            background: url('../images/leftic_01.png');
+                            left: 25px;
+                        }
+                    }
+                    p {
+                        font-size: 15px;
+                        line-height: 35px;
+                        color: #80808c;
+                        padding-left: 60px;
+                    }
+                }
+                //選單下滑效果
+                .slide {
+                    height: auto;
+                }
+                .slide .demo_li1 {
+                    font-weight: bold;
+                    color: #404040;
+                    &::before {
+                        background: url('../images/leftic_02.png');
+                    }
+                }
+            }
+        }
+        //選單下滑效果
+        .slide {
+            height: auto;
+            background: #e3e3e3;
+        }
+        .slide .list_ul4_li1 {
+            font-weight: bold;
+            color: #404040;
+            background: #fcfcfc;
+            &::before {
+                background: url('../images/leftic_02.png');
+            }
+        }
+    }
+}
